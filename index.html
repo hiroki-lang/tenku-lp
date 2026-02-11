@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -157,19 +157,15 @@ img {
   font-weight: 700;
   color: white;
   margin-bottom: 30px;
-
-  /* ↓ ここからが重要 */
   display: inline-block;
   line-height: 1.15;
   padding-top: 0.45em;
   padding-bottom: 0.1em;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
-
   letter-spacing: 3px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
-
 
 .hero-description {
     font-size: 20px;
@@ -187,7 +183,9 @@ img {
 
 /* ボタン */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 18px 40px;
     text-decoration: none;
     border-radius: 50px;
@@ -195,6 +193,9 @@ img {
     font-size: 16px;
     transition: all 0.3s;
     border: 2px solid transparent;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
 }
 
 .btn-primary {
@@ -229,6 +230,9 @@ section {
     color: var(--text-primary);
     margin-bottom: 20px;
     letter-spacing: 2px;
+    line-height: 1.25;
+    padding-top: .25em;
+    padding-bottom: .05em;
 }
 
 .section-accent {
@@ -256,12 +260,17 @@ section {
     box-shadow: var(--shadow-md);
 }
 
+.achievement-text {
+    text-align: center;
+}
+
 .achievement-title {
     font-size: 28px;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 20px;
     line-height: 1.6;
+    text-align: center;
 }
 
 .achievement-description {
@@ -269,10 +278,14 @@ section {
     color: var(--text-secondary);
     margin-bottom: 30px;
     line-height: 1.9;
+    text-align: center;
 }
 
 .achievement-points {
     list-style: none;
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
 }
 
 .achievement-points li {
@@ -282,7 +295,7 @@ section {
     padding-left: 10px;
 }
 
-/* お悩みセクション - グリッド形式 */
+/* お悩みセクション */
 .concerns {
     background-color: var(--bg-light);
     padding: 80px 0;
@@ -333,50 +346,10 @@ section {
 }
 
 .concern-label {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 800;
     text-align: center;
 }
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .concerns-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .concern-card {
-        padding: 25px;
-        min-height: 100px;
-    }
-    
-    .concern-text p {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .concerns {
-        padding: 60px 0;
-    }
-    
-    .concern-card {
-        padding: 20px;
-    }
-    
-    .concern-text p {
-        font-size: 14px;
-    }
-    
-    .concern-icon {
-        font-size: 28px;
-    }
-    
-    .concern-label {
-        font-size: 15px;
-    }
-}
-
 
 /* 3つのアプローチセクション */
 .service {
@@ -419,15 +392,16 @@ section {
 }
 
 .approach-number {
-    display: inline-block;
+    display: block;
     font-size: 14px;
     font-weight: 700;
     color: var(--blue-primary);
     background-color: rgba(74, 144, 226, 0.1);
     padding: 8px 20px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     width: fit-content;
+    text-align: center;
 }
 
 .approach-title {
@@ -547,6 +521,8 @@ section {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.25;
 }
 
 .synergy-result-description {
@@ -554,7 +530,7 @@ section {
     line-height: 2;
 }
 
-/* ビフォーアフターセクション（新規追加） */
+/* ビフォーアフターセクション */
 .before-after {
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
 }
@@ -643,7 +619,6 @@ section {
     line-height: 1.8;
 }
 
-
 /* お客様の声セクション */
 .testimonials {
     background-color: var(--bg-white);
@@ -700,46 +675,6 @@ section {
     line-height: 1.8;
 }
 
-/* 選ばれる理由セクション */
-.features {
-    background-color: var(--bg-light);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.feature-item {
-    background-color: var(--bg-white);
-    padding: 40px 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s;
-    border: 2px solid transparent;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--blue-light);
-}
-
-.feature-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 15px;
-}
-
-.feature-description {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.8;
-}
-
 /* 料金プランセクション */
 .pricing {
     background-color: var(--bg-white);
@@ -772,30 +707,22 @@ section {
     border-color: var(--blue-primary);
     box-shadow: var(--shadow-md);
     transform: scale(1.05);
-}
-
-.pricing-badge {
-    position: absolute;
-    top: -15px;
-    right: 20px;
-    background: linear-gradient(135deg, #ff6b6b, #ee5555);
-    color: var(--bg-white);
-    padding: 12px 35px;
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+    padding-top: 24px;
 }
 
 .pricing-header {
     margin-bottom: 30px;
 }
 
+.pricing-card-featured .pricing-header {
+    margin-bottom: 12px;
+}
+
 .pricing-title {
     font-size: 28px;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .pricing-subtitle {
@@ -819,35 +746,75 @@ section {
     color: var(--blue-primary);
 }
 
-.price-amount-featured {
-    font-size: 72px;
-    font-weight: 700;
-    color: #ff6b6b;
-    text-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
-}
-
-.price-unit {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--blue-primary);
-}
-
 .price-period {
     font-size: 18px;
     color: var(--text-secondary);
 }
 
-.pricing-features {
-    list-style: none;
-    margin-bottom: 30px;
-    text-align: left;
+.pricing-price--bundle {
+    margin-bottom: 18px;
 }
 
-.pricing-features li {
-    font-size: 15px;
-    color: var(--text-primary);
-    margin-bottom: 12px;
-    padding-left: 10px;
+.bundle-row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+    margin: 6px 0;
+}
+
+.bundle-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.bundle-old {
+    font-size: 22px;
+    color: rgba(0,0,0,0.45);
+    text-decoration: line-through;
+    font-weight: 700;
+}
+
+.bundle-new {
+    font-size: 44px;
+    font-weight: 800;
+    color: #ff6b6b;
+    text-shadow: 0 2px 8px rgba(255, 107, 107, 0.25);
+}
+
+.bundle-note {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.limited-notice {
+    margin: -8px auto 20px;
+    padding: 14px 20px;
+    max-width: 260px;
+    text-align: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(255, 77, 77, 0.35);
+}
+
+.limited-line1 {
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.limited-line2 {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 10px;
+    border-radius: 999px;
 }
 
 .pricing-detail-section {
@@ -901,7 +868,6 @@ section {
     margin-bottom: 20px;
 }
 
-/* LINEボタンぽよぽよアニメーション */
 @keyframes poyopoyo {
     0%, 100% { transform: scale(1); }
     25% { transform: scale(1.05); }
@@ -929,30 +895,26 @@ section {
     box-shadow: 0 6px 20px rgba(6, 199, 85, 0.6);
 }
 
-.access-map {
-    margin-top: 30px;
-    border-radius: 15px;
-    overflow: hidden;
+.contact-form-wrapper,
+.contact-access {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.contact-form-wrapper {
+    margin-bottom: 40px;
+    background-color: var(--bg-white);
+    padding: 50px;
+    border-radius: 20px;
     box-shadow: var(--shadow-md);
 }
 
-.access-map iframe {
-    display: block;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .access-map iframe {
-        height: 300px;
-    }
-}
-
-/* お問い合わせフォーム */
-.contact-form-wrapper {
-    max-width: 800px;
-    margin: 0 auto 60px;
+.contact-access {
+    margin-top: 40px;
     background-color: var(--bg-white);
-    padding: 50px;
+    padding: 40px;
     border-radius: 20px;
     box-shadow: var(--shadow-md);
 }
@@ -989,12 +951,14 @@ section {
 .form-group input,
 .form-group select,
 .form-group textarea {
+    width: 100%;
     padding: 14px;
     border: 2px solid var(--border-color);
     border-radius: 8px;
     font-size: 15px;
     font-family: inherit;
     transition: all 0.3s;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -1015,21 +979,15 @@ section {
     margin-top: 10px;
 }
 
+.form-submit .btn {
+    min-height: 56px;
+}
+
 .form-note {
     text-align: center;
     font-size: 13px;
     color: var(--text-secondary);
     margin-top: 20px;
-}
-
-/* アクセス情報 */
-.contact-access {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: var(--bg-white);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
 }
 
 .contact-access h3 {
@@ -1059,6 +1017,20 @@ section {
     margin-bottom: 10px;
 }
 
+.access-map {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.access-map iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    display: block;
+}
+
 /* フッター */
 .footer {
     background-color: var(--navy-dark);
@@ -1084,6 +1056,30 @@ section {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 8px;
+}
+
+.footer-logo {
+    height: 44px;
+    width: auto;
+    margin-bottom: 12px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-payments {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.footer-payments-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #aaa;
+}
+
+.payment-text {
+    font-size: 13px;
+    color: #ddd;
+    line-height: 1.6;
 }
 
 .footer-bottom {
@@ -1131,6 +1127,55 @@ section {
     transform: translateY(-5px);
 }
 
+/* ===== ヒーロータイトル：水色縁取り＆超強調版 ===== */
+.hero-title-main--bordered {
+    font-size: 52px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.02em !important;
+    display: block;
+    margin-bottom: 30px;
+    color: #ffffff !important;
+    text-shadow: 
+        0 0 10px rgba(74, 144, 226, 0.8),
+        0 0 20px rgba(74, 144, 226, 0.6),
+        0 0 30px rgba(74, 144, 226, 0.4),
+        3px 3px 8px rgba(0,0,0,0.5) !important;
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.7));
+}
+
+.hero-title-sub--highlight {
+    font-size: 48px !important;
+    font-weight: 900 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.08em !important;
+    display: block;
+    color: #ffffff !important;
+    text-shadow: 
+        0 0 8px rgba(0,0,0,0.9),
+        0 0 15px rgba(0,0,0,0.7),
+        0 0 25px rgba(0,0,0,0.5),
+        4px 4px 10px rgba(0,0,0,0.8) !important;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.6));
+}
+
+.hero-description--compact {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 40px !important;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sp-br {
+    display: none;
+}
+
+.sp-only {
+    display: none;
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
     .hero-title {
@@ -1138,6 +1183,13 @@ section {
         line-height: 1.4;
         word-break: keep-all;
         letter-spacing: 2px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-title br {
+        display: none !important;
     }
 
     .hero-description {
@@ -1160,11 +1212,87 @@ section {
 
     .section-title {
         font-size: 28px;
+        line-height: 1.3;
+        padding-top: .3em;
+    }
+
+    .achievements .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        overflow-x: hidden !important;
     }
 
     .achievements-content {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .achievement-title {
+        text-align: center;
+        font-size: 22px !important;
+        line-height: 1.45 !important;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+
+    .achievement-description {
+        text-align: center;
+        font-size: 14px !important;
+        line-height: 1.9 !important;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .achievement-points {
+        padding-left: 0 !important;
+        text-align: left;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .concerns .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        overflow-x: hidden !important;
+    }
+
+    .concerns .section-title {
+        font-size: 26px !important;
+        letter-spacing: 0 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .concerns-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .concern-card {
+        min-height: auto;
+        padding: 28px 20px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .concerns-grid .concern-card:nth-child(1) { order: 1; }
+    .concerns-grid .concern-card:nth-child(3) { order: 2; }
+    .concerns-grid .concern-card:nth-child(2) { order: 3; }
+    .concerns-grid .concern-card:nth-child(4) { order: 4; }
+    .concerns-grid .concern-card:nth-child(5) { order: 5; }
+    .concerns-grid .concern-card:nth-child(7) { order: 6; }
+    .concerns-grid .concern-card:nth-child(6) { order: 7; }
+    .concerns-grid .concern-card:nth-child(8) { order: 8; }
+
+    .concern-label,
+    .concern-text p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .approach-card {
@@ -1180,12 +1308,27 @@ section {
         order: 2;
     }
 
+    .title-3approach {
+        white-space: nowrap;
+        font-size: 24px;
+        letter-spacing: .02em;
+    }
+
     .synergy-flow {
         flex-direction: column;
     }
 
     .synergy-arrow {
         transform: rotate(90deg);
+    }
+
+    .synergy-result-title {
+        font-size: 22px;
+        line-height: 1.3;
+        letter-spacing: 0.05em;
+        padding: 0 12px;
+        text-align: center;
+        word-break: keep-all;
     }
 
     .before-after-grid {
@@ -1198,11 +1341,6 @@ section {
         gap: 20px;
     }
 
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
     .pricing-cards {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1210,6 +1348,26 @@ section {
 
     .pricing-card-featured {
         transform: scale(1);
+    }
+
+    .pricing-title {
+        margin-bottom: 6px;
+    }
+
+    .pricing-subtitle {
+        margin-bottom: 2px;
+    }
+
+    .pricing-duration {
+        margin-bottom: 4px;
+    }
+
+    .limited-notice {
+        margin-top: 4px;
+    }
+
+    .bundle-new {
+        font-size: 38px;
     }
 
     .footer-content {
@@ -1226,16 +1384,51 @@ section {
         padding: 30px 20px;
     }
 
-    .bubble-content {
-        max-width: 85%;
+    .access-map iframe {
+        height: 300px;
     }
 
     .price-amount {
         font-size: 48px;
     }
-    
-    .price-amount-featured {
-        font-size: 56px;
+
+    .hero-title-main--bordered {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.01em !important;
+        margin-bottom: 20px;
+        padding: 0 12px;
+        text-shadow: 
+            0 0 8px rgba(74, 144, 226, 0.9),
+            0 0 15px rgba(74, 144, 226, 0.7),
+            0 0 20px rgba(74, 144, 226, 0.5),
+            2px 2px 6px rgba(0,0,0,0.6) !important;
+    }
+
+    .hero-title-sub--highlight {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.05em !important;
+        padding: 0 12px;
+        text-shadow: 
+            0 0 6px rgba(0,0,0,0.9),
+            0 0 12px rgba(0,0,0,0.7),
+            0 0 18px rgba(0,0,0,0.5),
+            3px 3px 8px rgba(0,0,0,0.8) !important;
+    }
+
+    .hero-description--compact {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+        padding: 0 16px;
+    }
+
+    .sp-br {
+        display: inline !important;
+    }
+
+    .sp-only {
+        display: inline !important;
     }
 }
 
@@ -1247,10 +1440,6 @@ section {
     .price-amount {
         font-size: 40px;
     }
-    
-    .price-amount-featured {
-        font-size: 48px;
-    }
 
     .btn {
         padding: 15px 30px;
@@ -1261,852 +1450,185 @@ section {
         padding: 15px 35px;
         font-size: 18px;
     }
-}
-/* ===== 共通リセット ===== */
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html, body { overflow-x: hidden; }
-
-/* img / iframe のはみ出し防止 */
-img, iframe { max-width: 100%; }
-iframe { display: block; }
-
-/* ===== 悩みカード（PC見た目） ===== */
-.concerns-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.concern-card{
-  padding: 32px 24px;
-  border-radius: 20px;
-  text-align: center;
-  min-height: 140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #ffffff;
-  color: #333;
-}
-
-/* 青グラデにしたいカードだけ付ける（HTMLで is-gradient を付けて運用） */
-.concern-card.is-gradient{
-  background: linear-gradient(135deg, #7fc8f0, #4f8fe6);
-  color: #ffffff;
-}
-
-.concern-icon{
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-/* ===== フォーム & アクセス：幅統一 / 被り防止 ===== */
-.contact-form-wrapper,
-.contact-access{
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.contact-form-wrapper{ margin-bottom: 40px; }
-.contact-access{ margin-top: 40px; }
-
-.contact-form-wrapper input,
-.contact-form-wrapper select,
-.contact-form-wrapper textarea{
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* ===== Google Map ===== */
-.access-map iframe{
-  width: 100%;
-  height: 400px;
-  border: 0;
-  display: block;
-}
-
-/* ===== 見出しの「先頭が切れる」対策（汎用） ===== */
-.section-title-wrapper,
-.section-title-wrapper *{
-  overflow: visible !important;
-}
-
-.section-title{
-  line-height: 1.25;
-  padding-top: .25em;
-  padding-bottom: .05em;
-  margin-top: 0;
-}
-
-/* ===== iOS Safari：ヒーロー見出しが欠ける対策（ここ重要） ===== */
-.hero-title{
-  display: inline-block;         /* これが効くこと多い */
-  overflow: visible !important;
-  line-height: 1.15;
-  padding-top: .35em;            /* 欠け防止の本命 */
-  padding-bottom: .1em;
-  transform: translateZ(0);      /* iOSの描画バグ回避 */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ===== スマホ調整 ===== */
-@media (max-width: 768px){
-
-  /* 悩みカード：1列＆並び替え */
-  .concerns-grid{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .concern-card{
-    min-height: auto;
-    padding: 28px 20px;
-  }
-
-  /* 1 最近、髪のボリュームが減ってきた気がする… */
-  .concerns-grid .concern-card:nth-child(1){ order: 1; }
-  /* 2 💧 薄毛が気になる */
-  .concerns-grid .concern-card:nth-child(3){ order: 2; }
-  /* 3 フケやかゆみ、頭皮環境が気になる */
-  .concerns-grid .concern-card:nth-child(2){ order: 3; }
-  /* 4 💧 頭皮の悩み */
-  .concerns-grid .concern-card:nth-child(4){ order: 4; }
-  /* 5 仕事や日常のストレスで髪が心配 */
-  .concerns-grid .concern-card:nth-child(5){ order: 5; }
-  /* 6 💧 ストレスと疲労 */
-  .concerns-grid .concern-card:nth-child(7){ order: 6; }
-  /* 7 継続的なケアの方法が分からない */
-  .concerns-grid .concern-card:nth-child(6){ order: 7; }
-  /* 8 💧 何をすればいいか */
-  .concerns-grid .concern-card:nth-child(8){ order: 8; }
-
-  /* 地図高さ */
-  .access-map iframe{ height: 300px; }
-
-  /* 見出し余白 */
-  .section-title{ line-height: 1.3; padding-top: .3em; }
-
-  /* 3つのアプローチを1行にしたい時だけ（h2に class="title-3approach" を付けた場合） */
-  .title-3approach{
-    white-space: nowrap;
-    font-size: 24px; /* 22〜26 で調整OK */
-    letter-spacing: .02em;
-  }
-}
-       /* ===== スマホ：ヒーロー見出しの右切れ（はみ出し）対策 ===== */
-@media (max-width: 768px){
-  .hero-title{
-    max-width: 100%;
-    overflow-wrap: anywhere;   /* これが最強：はみ出しを強制的に折り返す */
-    word-break: break-word;
-    letter-spacing: 1px;       /* PCのままだと横幅が増えて切れやすいので縮める */
-  }
-
-  /* iOS Safariで描画がズレる時の保険 */
-  .hero-content{
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-        /* ===== iOS Safari：ヒーロー右切れ完全対策（決定版） ===== */
-@media (max-width: 768px){
-
-  /* ヒーロー全体を画面内に固定 */
-  .hero,
-  .hero-content,
-  .hero .container {
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  /* 見出し自体の横はみ出し防止 */
-  .hero-title {
-    max-width: 100%;
-    box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
-    letter-spacing: 0.5px;   /* ← ここが超重要（3pxは広すぎ） */
-    word-break: break-word;
-    overflow-wrap: anywhere;
-  }
-}
-        /* ===== スマホ：ヒーロータイトルを「2行で綺麗に」 ===== */
-@media (max-width: 768px){
-
-  /* 今のHTMLの <br> をスマホだけ無効化 */
-  .hero-title br{
-    display: none;
-  }
-
-  /* 2行に収める見た目調整 */
-  .hero-title{
-    font-size: 33px;        /* 32〜36で微調整OK */
-    line-height: 1.15;
-    letter-spacing: 0.5px;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 96%;
-    word-break: keep-all;   /* 変な場所で割れにくくする */
-    overflow-wrap: anywhere;
-  }
-}
-        /* ===== スマホ：ヒーロータイトルを2行に寄せる（強制上書き） ===== */
-@media (max-width: 768px){
-
-  /* <br> はスマホだけ無効 */
-  .hero-title br{ display:none !important; }
-
-  /* 2行に入るサイズへ調整（重要：!importantで上書き） */
-  .hero .hero-title,
-  h1.hero-title{
-    font-size: 28px !important;     /* ←ここが肝。26〜30で微調整 */
-    line-height: 1.18 !important;
-    letter-spacing: 0.5px !important;
-    padding: 0 14px !important;
-    margin: 0 auto !important;
-    max-width: 390px !important;    /* 画面幅に合わせて自然に2行化 */
-    text-wrap: balance;             /* 対応端末は綺麗に均等割り */
-    overflow-wrap: anywhere !important;
-    word-break: normal !important;
-  }
-}
-        /* ===== スマホ：ヒーロータイトル 上大・下小で2行固定 ===== */
-@media (max-width: 768px){
-
-  .hero-title{
-    font-size: 30px !important;   /* 上の行 */
-    line-height: 1.15 !important;
-    letter-spacing: .5px !important;
-    padding: 0 14px !important;
-    margin: 0 auto !important;
-    text-align: center;
-  }
-
-  /* 2行目だけ小さくする */
-  .hero-title br + *{
-    display: inline-block;
-    font-size: 24px !important;   /* ← 下の行を小さく */
-    line-height: 1.25 !important;
-    margin-top: .2em;
-  }
-}
-        /* ===== スマホ：ヒーロータイトル 完全決定版 ===== */
-@media (max-width: 768px){
-
-  .hero-title{
-    font-size: 30px !important;   /* 上の行 */
-    line-height: 1.18 !important;
-    letter-spacing: 0.5px !important; /* ★ここが最重要 */
-    padding: 0 16px !important;
-    margin: 0 auto !important;
-    text-align: center;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-  }
-
-  /* 下の行を少し小さく */
-  .hero-title br + *{
-    display: inline-block;
-    font-size: 24px !important;
-    line-height: 1.25 !important;
-    letter-spacing: 0.3px !important;
-    margin-top: 0.2em;
-  }
-}
-        /* ===== ヒーロー見出し：右切れ防止＋2行バランス（最終FIX） ===== */
-@media (max-width: 768px){
-
-  /* 親の余白を確保（端末で右切れしやすいので必須） */
-  .hero .container,
-  .hero-content{
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 見出し本体：はみ出し原因（letter-spacing等）を潰す */
-  h1.hero-title{
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-
-    text-align: center !important;
-    margin: 0 auto !important;
-
-    letter-spacing: 0px !important;   /* ★右切れの主因 */
-    overflow: visible !important;
-
-    word-break: keep-all !important;  /* 日本語の変な割れ防止 */
-    overflow-wrap: anywhere !important;
-
-    transform: none !important;       /* 変形系で切れる端末があるため無効化 */
-  }
-
-  .hero-title-top{
-    display: block;
-    font-size: 30px;
-    line-height: 1.15;
-  }
-
-  .hero-title-bottom{
-    display: block;
-    font-size: 24px;   /* 下は小さくしてバランス */
-    line-height: 1.2;
-    margin-top: 6px;
-  }
-}
-        @media (max-width: 768px){
-  .hero-title{
-    text-align: center;
-    padding: 0 16px;
-  }
-
-  .hero-title-main{
-    display: block;
-    font-size: 30px;
-    line-height: 1.15;
-    letter-spacing: 0.5px;
-  }
-
-  .hero-title-sub{
-    display: block;
-    margin-top: 0.25em;
-    font-size: 24px;   /* 下を小さく */
-    line-height: 1.25;
-    letter-spacing: 0.3px;
-  }
-}
-        .payment-icons{
-  margin-top: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
-.payment-label{
-  font-size: 13px;
-  color: rgba(255,255,255,0.7); /* 黒フッター想定。白フッターなら色を#666とかに */
-}
-
-.payment-row{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  justify-content: center;
-  align-items: center;
-}
-
-.payment-row img{
-  height: 20px;
-  width: auto;
-  opacity: 0.95;
-}
-        .footer-logo{
-  height: 44px;
-  width: auto;
-  margin-bottom: 12px;
-  filter: brightness(0) invert(1); /* フッターが黒背景なら白っぽく見せる */
-}
-        .footer-payments {
-  text-align: center;
-  margin-top: 24px;
-}
-
-.footer-payments-title {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #aaa;
-}
-
-.payment-text {
-  font-size: 13px;
-  color: #ddd;
-  line-height: 1.6;
-}
-        /* ===== ボタン：iOSで文字が欠けるのを防ぐ（最重要） ===== */
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.2;
-  padding-block: 18px;     /* 上下を明示 */
-  padding-inline: 40px;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision;
-}
-
-.btn-large{
-  padding-block: 20px;
-  padding-inline: 50px;
-}
-
-/* 送信ボタンも同じ */
-.form-submit .btn{
-  min-height: 56px; /* 押しやすさ + 欠け防止 */
-}
-
-/* ===== 2枚目（実績）：中央揃え + 折り返し自然に ===== */
-.achievement-text{
-  text-align: center;
-}
-
-.achievement-title{
-  text-align: center;
-  text-wrap: balance;      /* 対応ブラウザで自然な改行 */
-}
-
-.achievement-description{
-  text-align: center;
-  text-wrap: balance;
-}
-
-/* チェック箇条書きだけは読みやすく左揃えで中央配置 */
-.achievement-points{
-  display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-}
-
-/* ===== 3枚目：見出しを1行に ===== */
-.concerns .section-title{
-  white-space: nowrap;
-}
-
-/* 青いカード（交互の水色側）を「少し大きく・太く」 */
-.concern-card.accent .concern-label{
-  font-size: 18px;
-  font-weight: 800;
-}
-
-/* もし青カードの本文も使うなら */
-.concern-card.accent .concern-text p{
-  font-size: 17px;
-  font-weight: 800;
-  color: #fff;
-}
-
-/* ===== 4枚目：アプローチ01/02/03 を中央に ===== */
-.approach-number{
-  display: block;
-  margin: 0 auto 20px;
-  text-align: center;
-}
-
-/* ===== 4枚目：相乗効果の見出しを指定の折り返し＆中央揃え ===== */
-.synergy-result-title{
-  text-align: center;
-  line-height: 1.25;
-}
-
-/* ===== 5枚目：サポート体制を1行にしたい（カード幅で落ちる場合） ===== */
-.feature-title{
-  white-space: nowrap;
-}
-
-@media (max-width: 480px){
-  .feature-title{
-    font-size: 18px; /* 20→18にして1行化しやすく */
-  }
-}
-        /* ===== 1枚目：サブ見出しを1行固定（スマホでも折り返さない） ===== */
-.hero-title-sub{
-  white-space: nowrap;
-}
-
-/* 端末幅が狭いときは、はみ出さないように少しだけ縮める */
-@media (max-width: 480px){
-  .hero-title-sub{
-    font-size: 20px;      /* 18〜22で微調整OK */
-    letter-spacing: 0.2px;
-  }
-}
-
-/* さらに小さい端末（SE系）対策 */
-@media (max-width: 375px){
-  .hero-title-sub{
-    font-size: 18px;
-  }
-}
-        /* ===== 2枚目：実績セクション（スマホ最適化） ===== */
-@media (max-width: 768px){
-  .achievements .container{
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    overflow-x: hidden !important;
-  }
-
-  .achievement-title{
-    text-align: center;
-    font-size: 22px !important;   /* ←少し小さく */
-    line-height: 1.45 !important;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    word-break: keep-all;
-    overflow-wrap: anywhere;       /* ←右見切れ防止の本命 */
-  }
-
-  .achievement-description{
-    text-align: center;
-    font-size: 14px !important;    /* ←少し小さく */
-    line-height: 1.9 !important;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-  }
-
-  .achievement-points{
-    padding-left: 0 !important;
-    text-align: left;              /* 箇条書きは左の方が読みやすい */
-    max-width: 520px;
-    margin: 0 auto;
-  }
-}
-        /* ===== 3枚目：こんなお悩み（スマホ最適化） ===== */
-@media (max-width: 768px){
-  .concerns .container{
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    overflow-x: hidden !important;
-  }
-
-  .concerns .section-title{
-    font-size: 26px !important;   /* ここも少し下げる */
-    letter-spacing: 0 !important;
-    overflow-wrap: anywhere;
-  }
-
-  .concern-card{
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .concern-label,
-  .concern-text p{
-    font-size: 15px !important;   /* ←少し小さく */
-    line-height: 1.6 !important;
-    overflow-wrap: anywhere;      /* ←右見切れ防止 */
-    word-break: break-word;
-  }
-}
-        /* ===== 相乗効果タイトル：スマホ最適化 ===== */
-@media (max-width: 768px) {
-  .synergy-result-title {
-    font-size: 22px;          /* ← 小さくする（20〜24で微調整OK） */
-    line-height: 1.3;
-    letter-spacing: 0.05em;
-    padding: 0 12px;          /* ← 右切れ防止 */
-    text-align: center;
-    word-break: keep-all;     /* 日本語の変な改行防止 */
-  }
-}
-     .pricing-price--bundle{ margin-bottom: 18px; }
-.bundle-row{
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 10px;
-  margin: 6px 0;
-}
-.bundle-label{
-  font-size: 14px;
-  color: var(--text-secondary);
-  font-weight: 700;
-}
-.bundle-old{
-  font-size: 22px;
-  color: rgba(0,0,0,0.45);
-  text-decoration: line-through;
-  font-weight: 700;
-}
-.bundle-new{
-  font-size: 44px;
-  font-weight: 800;
-  color: #ff6b6b;
-  text-shadow: 0 2px 8px rgba(255, 107, 107, 0.25);
-}
-.bundle-note{
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-@media (max-width: 768px){
-  .bundle-new{ font-size: 38px; }
-}
-     .badge-strong{
-  font-weight: 800;
-  font-size: 1.05em;
-}
-     /* ===== モニターカード：バッジとタイトルが被らないようにする ===== */
-.pricing-card {
-  position: relative;
-}
-
-/* featuredカードだけ、上に余白を足す（バッジの高さ分） */
-.pricing-card-featured{
-  padding-top: 72px; /* ←バッジの高さに合わせて調整（60〜90でOK） */
-}
-
-/* バッジをカード内の右上に固定（被りにくい位置） */
-.pricing-badge{
-  top: 18px;      /* -15px をやめる */
-  right: 18px;
-  left: auto;
-  z-index: 2;
-}
-
-/* バッジ内の強調（◯枠/◯日） */
-.badge-strong{
-  font-weight: 800;
-  font-size: 1.05em;
-}
-     /* ===== モニター価格：今回限定バッジを1行＆中央配置 ===== */
-.pricing-card {
-  position: relative; /* 念のため（既にあるが保険） */
-}
-
-.pricing-badge--inline{
-  position: absolute;
-  top: 18px;              /* カード上部に固定 */
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: calc(100% - 48px);
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 14px;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;    /* 1行固定 */
-  z-index: 3;
-}
-
-.pricing-badge--inline .badge-strong{
-  font-weight: 800;
-}
-
-/* バッジが“モニター特別価格”タイトルに被らないように、タイトル側に上余白を付ける */
-.pricing-card-featured .pricing-header{
-  padding-top: 28px;  /* 24〜40で好み調整 */
-}
-
-/* スマホだけ少し小さくして確実に1行に */
-@media (max-width: 480px){
-  .pricing-badge--inline{
-    font-size: 12px;
-    padding: 8px 14px;
-    top: 14px;
-  }
-  .pricing-card-featured .pricing-header{
-    padding-top: 34px; /* バッジ分、少し余白増やす */
-  }
-}
-/* 今回限定・モニター告知（主役） */
-.pricing-card-featured .limited-notice{
-  margin: 6px auto 14px;     /* タイトル上に置くならマイナス不要 */
-  padding: 14px 20px;
-  max-width: 320px;          /* PCで少し見栄えUP（好みで260でもOK） */
-  text-align: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(255, 77, 77, 0.35);
-}
-
-.limited-line1{
-  display:block;
-  font-size:16px;
-  font-weight:800;
-  letter-spacing:0.06em;
-}
-
-.limited-line2{
-  display:block;
-  margin-top:6px;
-  font-size:14px;
-  font-weight:700;
-  background:rgba(255,255,255,0.2);
-  padding:6px 10px;
-  border-radius:999px;
-}
-
-     @media (max-width: 480px){
-  .limited-line1{
-    font-size: 17px;
-  }
-  .limited-line2{
-    font-size: 15px;
-  }
-}
-     .limited-notice {
-  margin: -8px auto 20px; /* ← 上を詰める（-8pxがポイント） */
-  padding: 14px 20px;
-  max-width: 260px;
-  text-align: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(255, 77, 77, 0.35);
-}
-     .pricing-title {
-  margin-bottom: 8px; /* デフォルトより小さく */
-}
-     @media (max-width: 768px){
-  .pricing-title{ margin-bottom: 6px; }
-  .pricing-subtitle{ margin-bottom: 2px; }
-  .pricing-duration{ margin-bottom: 4px; }
-  .limited-notice{ margin-top: 4px; }
-}
-     /* モニターカードだけ上のpaddingを詰める */
-.pricing-card-featured{
-  padding-top: 24px;   /* 40px→24px */
-}
 
-/* タイトル周りの下余白も詰める */
-.pricing-card-featured .pricing-header{
-  margin-bottom: 12px; /* 30px→12px */
+    .limited-line1 {
+        font-size: 17px;
+    }
+
+    .limited-line2 {
+        font-size: 15px;
+    }
+
+    .hero-title-main--bordered {
+        font-size: 24px !important;
+        padding: 0 10px;
+    }
+
+    .hero-title-sub--highlight {
+        font-size: 22px !important;
+        padding: 0 10px;
+    }
+
+    .hero-description--compact {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-title-main--bordered {
+        font-size: 22px !important;
+        letter-spacing: 0 !important;
+    }
+
+    .hero-title-sub--highlight {
+        font-size: 20px !important;
+        letter-spacing: 0.03em !important;
+    }
 }
     </style>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11371430533"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-11371430533');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11371430533"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11371430533');
+    </script>
 </head>
- <!-- ===== 追従CTA：吹き出し＋横長ボタン（LINEへ） ===== -->
-<a class="cta-fixed" href="https://lin.ee/gJFZwq4?openExternalBrowser=1" target="_blank" rel="noopener">
-  <div class="cta-bubble">1分で簡単！</div>
-
-  <div class="cta-pill">
-    <span class="cta-icon" aria-hidden="true">
-      <!-- カレンダー風アイコン（画像に寄せた） -->
-      <svg viewBox="0 0 24 24" width="22" height="22">
-        <path fill="#fff" d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zm12 8H5v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10zM6 12h3v3H6v-3zm4 0h3v3h-3v-3zm4 0h3v3h-3v-3zM6 16h3v3H6v-3zm4 0h3v3h-3v-3z"/>
-      </svg>
-    </span>
-
-    <span class="cta-text">今すぐ相談する</span>
-
-    <span class="cta-line-badge" aria-hidden="true">
-      <!-- LINEロゴ（小さめ） -->
-      <svg viewBox="0 0 256 256" width="18" height="18">
-        <path fill="#06C755"
-          d="M128 20c-57.35 0-104 39.02-104 87.13 0 43.1 36.72 79.05 86.33 86.09 3.35.73 7.9 2.27 9.06 5.21 1.05 2.67.69 6.86.34 9.56 0 0-1.2 7.2-1.46 8.73-.44 2.67-2.01 10.46 9.17 5.7 11.18-4.75 60.36-35.55 82.32-60.82 15.17-16.63 22.9-33.51 22.9-55.47C232 59.02 185.35 20 128 20z"/>
-      </svg>
-    </span>
-  </div>
-</a>
-
-<style>
-/* 追従全体 */
-.cta-fixed{
-  position: fixed;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  z-index: 9999;
-  text-decoration: none;
-  color: #fff;
-  width: min(680px, calc(100% - 24px));
-}
-
-/* 吹き出し */
-.cta-bubble{
-  display: inline-block;
-  margin: 0 auto 10px;
-  padding: 8px 14px;
-  background: #fff;
-  color: #111;
-  font-weight: 900;
-  font-size: 18px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.cta-bubble::after{
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 0; height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #fff;
-  filter: drop-shadow(0 6px 8px rgba(0,0,0,.18));
-}
-
-/* 横長の丸ボタン */
-.cta-pill{
-  height: 74px;
-  border-radius: 999px;
-  background: #10b116; /* 画像のグリーン寄せ（単色） */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  box-shadow: 0 16px 40px rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.18);
-  transition: transform .12s ease, filter .12s ease;
-}
-.cta-fixed:hover .cta-pill{
-  transform: translateY(-1px);
-  filter: brightness(1.03);
-}
-
-/* 左アイコン */
-.cta-icon{
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: rgba(255,255,255,.14);
-  border: 1px solid rgba(255,255,255,.18);
-}
-
-/* 文言 */
-.cta-text{
-  font-weight: 900;
-  font-size: 28px;
-  letter-spacing: .02em;
-  white-space: nowrap;
-}
-
-/* 右下の小さなLINEバッジ（任意） */
-.cta-line-badge{
-  width: 34px; height: 34px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.95);
-  display: grid;
-  place-items: center;
-}
-
-/* スマホ最適化 */
-@media (max-width: 520px){
-  .cta-fixed{ bottom: 12px; width: calc(100% - 16px); }
-  .cta-bubble{ font-size: 16px; padding: 7px 12px; }
-  .cta-pill{ height: 64px; gap: 10px; }
-  .cta-icon{ width: 40px; height: 40px; border-radius: 12px; }
-  .cta-text{ font-size: 20px; }
-  .cta-line-badge{ width: 30px; height: 30px; }
-}
-</style>
 
 <body>
+    <!-- ===== 追従CTA：吹き出し＋横長ボタン（LINEへ） ===== -->
+    <a class="cta-fixed" href="https://lin.ee/gJFZwq4?openExternalBrowser=1" target="_blank" rel="noopener">
+        <div class="cta-bubble">1分で簡単！</div>
+        <div class="cta-pill">
+            <span class="cta-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                    <path fill="#fff" d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zm12 8H5v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10zM6 12h3v3H6v-3zm4 0h3v3h-3v-3zm4 0h3v3h-3v-3zM6 16h3v3H6v-3zm4 0h3v3h-3v-3z"/>
+                </svg>
+            </span>
+            <span class="cta-text">今すぐ相談する</span>
+            <span class="cta-line-badge" aria-hidden="true">
+                <svg viewBox="0 0 256 256" width="18" height="18">
+                    <path fill="#06C755" d="M128 20c-57.35 0-104 39.02-104 87.13 0 43.1 36.72 79.05 86.33 86.09 3.35.73 7.9 2.27 9.06 5.21 1.05 2.67.69 6.86.34 9.56 0 0-1.2 7.2-1.46 8.73-.44 2.67-2.01 10.46 9.17 5.7 11.18-4.75 60.36-35.55 82.32-60.82 15.17-16.63 22.9-33.51 22.9-55.47C232 59.02 185.35 20 128 20z"/>
+                </svg>
+            </span>
+        </div>
+    </a>
+
+    <style>
+    /* 追従全体 */
+    .cta-fixed {
+        position: fixed;
+        left: 50%;
+        bottom: 18px;
+        transform: translateX(-50%);
+        z-index: 9999;
+        text-decoration: none;
+        color: #fff;
+        width: min(680px, calc(100% - 24px));
+    }
+
+    .cta-bubble {
+        display: inline-block;
+        margin: 0 auto 10px;
+        padding: 8px 14px;
+        background: #fff;
+        color: #111;
+        font-weight: 900;
+        font-size: 18px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,.25);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .cta-bubble::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #fff;
+        filter: drop-shadow(0 6px 8px rgba(0,0,0,.18));
+    }
+
+    .cta-pill {
+        height: 74px;
+        border-radius: 999px;
+        background: #10b116;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        box-shadow: 0 16px 40px rgba(0,0,0,.35);
+        border: 1px solid rgba(255,255,255,.18);
+        transition: transform .12s ease, filter .12s ease;
+    }
+
+    .cta-fixed:hover .cta-pill {
+        transform: translateY(-1px);
+        filter: brightness(1.03);
+    }
+
+    .cta-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(255,255,255,.14);
+        border: 1px solid rgba(255,255,255,.18);
+    }
+
+    .cta-text {
+        font-weight: 900;
+        font-size: 28px;
+        letter-spacing: .02em;
+        white-space: nowrap;
+    }
+
+    .cta-line-badge {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.95);
+        display: grid;
+        place-items: center;
+    }
+
+    @media (max-width: 520px) {
+        .cta-fixed {
+            bottom: 12px;
+            width: calc(100% - 16px);
+        }
+        .cta-bubble {
+            font-size: 16px;
+            padding: 7px 12px;
+        }
+        .cta-pill {
+            height: 64px;
+            gap: 10px;
+        }
+        .cta-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+        .cta-text {
+            font-size: 20px;
+        }
+        .cta-line-badge {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    </style>
+
     <!-- ヘッダー -->
     <header class="header">
         <div class="container">
@@ -2116,7 +1638,6 @@ iframe { display: block; }
                 </div>
                 <nav class="nav">
                     <a href="#service">サービス</a>
-                    <a href="#features">特徴</a>
                     <a href="#price">料金</a>
                     <a href="#contact">お問い合わせ</a>
                 </nav>
@@ -2127,21 +1648,22 @@ iframe { display: block; }
     <!-- ヒーローセクション -->
     <section class="hero">
         <div class="hero-background">
-  <img src="./img/shutterstock_2280646327.jpg" alt="天空の領域 ヘッドスパ">
+            <img src="./img/shutterstock_2280646327.jpg" alt="天空の領域 ヘッドスパ">
         </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">横浜・関内 発毛促進サポート専門サロン</div>
-               <h1 class="hero-title">
-  <span class="hero-title-main">エクソソーム×ヘッドスパで</span>
-  <span class="hero-title-sub">新しい発毛促進サポート体験</span>
-</h1>
-                <p class="hero-description">
-  2018年設立、施術実績15,000人以上、
-                 <br>リピート率90%。
-  <br>毛髪診断士の資格を持つ専門家が、
-                 <br>最先端のエクソソーム療法と極上のヘッドスパであなたの髪の悩みを改善します。
-</p>
+                
+                <h1 class="hero-title hero-title--impact">
+                    <span class="hero-title-main hero-title-main--bordered">諦めていた髪が、<br class="sp-br">たった3ヶ月で驚きの変化</span>
+                    <span class="hero-title-sub hero-title-sub--highlight">エクソソーム×ヘッドスパ<br class="sp-br"> 発毛革命</span>
+                </h1>
+                
+                <p class="hero-description hero-description--compact">
+                    <strong>施術実績15,000人以上、リピート率90%。</strong><br>
+                    毛髪診断士が最先端ケアで<br class="sp-only">あなたの髪の悩みを改善します。
+                </p>
+                
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary btn-large">無料カウンセリング予約</a>
                 </div>
@@ -2159,14 +1681,13 @@ iframe { display: block; }
             <div class="achievements-content">
                 <div class="achievement-text">
                     <h3 class="achievement-title">
-  2018年設立、15,000人以上を施術<br>リピート率90%の<br>毛髪診断士在籍サロン
-</h3>
-
-<p class="achievement-description">
-  7年間で15,000人以上の施術実績を持つ、毛髪診断士在籍サロン。<br>
-  専門知識と豊富な経験で一人ひとりの頭皮状態を丁寧に診断し、
-  お客様の90%がリピートする信頼のケアプランをご提案いたします。
-</p>
+                        2018年設立、15,000人以上を施術<br>リピート率90%の<br>毛髪診断士在籍サロン
+                    </h3>
+                    <p class="achievement-description">
+                        7年間で15,000人以上の施術実績を持つ、毛髪診断士在籍サロン。<br>
+                        専門知識と豊富な経験で一人ひとりの頭皮状態を丁寧に診断し、
+                        お客様の90%がリピートする信頼のケアプランをご提案いたします。
+                    </p>
                     <ul class="achievement-points">
                         <li>✓ 2018年設立、7年間の実績</li>
                         <li>✓ 施術実績 15,000人突破</li>
@@ -2175,7 +1696,7 @@ iframe { display: block; }
                     </ul>
                 </div>
                 <div class="achievement-image">
-                   <img src="./img/S__34430988.jpg" alt="毛髪診断士による丁寧なカウンセリング">
+                    <img src="./img/S__34430988.jpg" alt="毛髪診断士による丁寧なカウンセリング">
                 </div>
             </div>
         </div>
@@ -2323,9 +1844,9 @@ iframe { display: block; }
                 </div>
             </div>
             <div class="synergy-result">
-               <h3 class="synergy-result-title">
-  継続的な発毛促進<br>サポート環境の実現
-</h3>
+                <h3 class="synergy-result-title">
+                    継続的な発毛促進<br>サポート環境の実現
+                </h3>
                 <p class="synergy-result-description">
                     3つのアプローチを組み合わせることで、頭皮環境の改善から細胞活性化、そして日々のケアまで、<br>
                     トータルで髪のお悩みをサポートする総合的なアプローチを実現します。
@@ -2334,7 +1855,7 @@ iframe { display: block; }
         </div>
     </section>
 
-    <!-- ビフォーアフターセクション（新規追加） -->
+    <!-- ビフォーアフターセクション -->
     <section class="before-after">
         <div class="container">
             <div class="section-title-wrapper">
@@ -2350,7 +1871,7 @@ iframe { display: block; }
                         </div>
                         <div class="before-after-image">
                             <span class="before-after-label after">After</span>
-                           <img src="./img/ba1-after.jpg.jpg"  alt="施術後">
+                            <img src="./img/ba1-after.jpg.jpg" alt="施術後">
                         </div>
                     </div>
                     <div class="before-after-info">
@@ -2364,11 +1885,11 @@ iframe { display: block; }
                     <div class="before-after-images">
                         <div class="before-after-image">
                             <span class="before-after-label before">Before</span>
-                           <img src="./img/ba2-before.jpg.jpg" alt="施術前">
+                            <img src="./img/ba2-before.jpg.jpg" alt="施術前">
                         </div>
                         <div class="before-after-image">
                             <span class="before-after-label after">After</span>
-                           <img src="./img/ba2-after.jpg.jpg"  alt="施術後">
+                            <img src="./img/ba2-after.jpg.jpg" alt="施術後">
                         </div>
                     </div>
                     <div class="before-after-info">
@@ -2380,7 +1901,6 @@ iframe { display: block; }
             </div>
         </div>
     </section>
-
 
     <!-- お客様の声セクション -->
     <section class="testimonials">
@@ -2424,42 +1944,6 @@ iframe { display: block; }
         </div>
     </section>
 
-    <!-- 選ばれる理由セクション -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">選ばれる理由</h2>
-                <div class="section-accent"></div>
-            </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <h3 class="feature-title">専門性</h3>
-                    <p class="feature-description">
-                        15,000人以上の頭皮を診断してきた毛髪診断士が、豊富な経験と専門知識でサポートします。
-                    </p>
-                </div>
-                <div class="feature-item">
-                    <h3 class="feature-title">施設環境</h3>
-                    <p class="feature-description">
-                        横浜・関内の落ち着いたプライベート空間で、リラックスしながら施術を受けていただけます。
-                    </p>
-                </div>
-                <div class="feature-item">
-                    <h3 class="feature-title">リラックス</h3>
-                    <p class="feature-description">
-                        極上のヘッドスパで心身ともにリフレッシュ。ストレスケアも同時に行います。
-                    </p>
-                </div>
-                <div class="feature-item">
-                    <h3 class="feature-title">サポート体制</h3>
-                    <p class="feature-description">
-                        施術後のホームケアまで、一人ひとりに寄り添った継続的なサポートを提供します。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 料金プランセクション -->
     <section id="price" class="pricing">
         <div class="container">
@@ -2480,105 +1964,106 @@ iframe { display: block; }
                         <div class="price-period">1回あたり</div>
                     </div>
                     <div class="pricing-detail-section">
-  <h4>◆カウンセリング</h4>
-  <ul>
-    <li>・頭皮状態・生活習慣・薄毛要因を専門スタッフが分析</li>
-    <li>・現状に応じた改善戦略を個別に設計</li>
-    <li>・自宅での実践ポイントまで明確化</li>
-  </ul>
+                        <h4>◆カウンセリング</h4>
+                        <ul>
+                            <li>・頭皮状態・生活習慣・薄毛要因を専門スタッフが分析</li>
+                            <li>・現状に応じた改善戦略を個別に設計</li>
+                            <li>・自宅での実践ポイントまで明確化</li>
+                        </ul>
 
-  <h4>◆プレミアムヘッドスパ</h4>
-  <ul>
-    <li>・髪にとって1番の美容液は血液と言われています。</li>
-    <li>・強い髪を育てるためにまずは血行促進。</li>
-    <li>・育毛成分が浸透しやすい頭皮環境へ整備</li>
-    <li>・睡眠・自律神経・ストレス要因にもアプローチ</li>
-  </ul>
+                        <h4>◆プレミアムヘッドスパ</h4>
+                        <ul>
+                            <li>・髪にとって1番の美容液は血液と言われています。</li>
+                            <li>・強い髪を育てるためにまずは血行促進。</li>
+                            <li>・育毛成分が浸透しやすい頭皮環境へ整備</li>
+                            <li>・睡眠・自律神経・ストレス要因にもアプローチ</li>
+                        </ul>
 
-  <h4>◆エクソソーム施術</h4>
-  <ul>
-    <li>・細胞レベルで発毛サイクルを活性化する集中アプローチ</li>
-    <li>・初期段階から変化を追える個別カルテ管理</li>
-    <li>・回数ごとに進行度を最適化し、結果につなげる設計</li>
-  </ul>
+                        <h4>◆エクソソーム施術</h4>
+                        <ul>
+                            <li>・細胞レベルで発毛サイクルを活性化する集中アプローチ</li>
+                            <li>・初期段階から変化を追える個別カルテ管理</li>
+                            <li>・回数ごとに進行度を最適化し、結果につなげる設計</li>
+                        </ul>
 
-  <h4>◆ホームケアサポート</h4>
-  <ul>
-    <li>・頭皮用美容液・シャンプーなどで日々のケアを最適化する商品のご紹介</li>
-    <li>・施術効果のヒアリング</li>
-    <li>・定着させる補強ケアアドバイス</li>
-  </ul>
-</div>
+                        <h4>◆ホームケアサポート</h4>
+                        <ul>
+                            <li>・頭皮用美容液・シャンプーなどで日々のケアを最適化する商品のご紹介</li>
+                            <li>・施術効果のヒアリング</li>
+                            <li>・定着させる補強ケアアドバイス</li>
+                        </ul>
+                    </div>
                     <a href="#contact" class="btn btn-primary" style="margin-top: 30px;">問い合わせしてみる</a>
                     <p class="pricing-note">※初回のみカウンセリング時間が延長になる場合がございます</p>
                 </div>
-               <!-- モニター特別価格 -->
-<div class="pricing-card pricing-card-featured">
-  <div class="pricing-header">
-    <h3 class="pricing-title">モニター特別価格</h3>
-    <p class="pricing-subtitle">3ヶ月集中プラン（全6回）</p>
-    <p class="pricing-duration">約90分の施術</p>
-  </div>
- <div class="limited-notice">
-  <span class="limited-line1">今回限定‼</span>
-  <span class="limited-line2">残り5枠｜1/28まで</span>
-</div>
 
-  <!-- 価格表示（全6回→モニター価格） -->
-  <div class="pricing-price pricing-price--bundle">
-    <div class="bundle-row">
-      <span class="bundle-label">全6回</span>
-      <span class="bundle-old">198,000円</span>
-    </div>
-    <div class="bundle-row bundle-row--new">
-      <span class="bundle-label">モニター価格</span>
-      <span class="bundle-new">58,000円</span>
-    </div>
-    <div class="bundle-note">※3ヶ月集中プラン（全6回）</div>
-  </div>
+                <!-- モニター特別価格 -->
+                <div class="pricing-card pricing-card-featured">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">モニター特別価格</h3>
+                        <p class="pricing-subtitle">3ヶ月集中プラン（全6回）</p>
+                        <p class="pricing-duration">約90分の施術</p>
+                    </div>
+                    <div class="limited-notice">
+                        <span class="limited-line1">今回限定‼</span>
+                        <span class="limited-line2">残り5枠｜1/28まで</span>
+                    </div>
 
-  <div class="pricing-detail-section">
-    <h4>◆カウンセリング（毛髪診断士在籍サロン）</h4>
-    <ul>
-      <li>・頭皮状態・生活習慣・薄毛要因を専門スタッフが分析</li>
-      <li>・現状に応じた改善戦略を個別に設計</li>
-      <li>・自宅での実践ポイントまで明確化</li>
-    </ul>
+                    <!-- 価格表示（全6回→モニター価格） -->
+                    <div class="pricing-price pricing-price--bundle">
+                        <div class="bundle-row">
+                            <span class="bundle-label">全6回</span>
+                            <span class="bundle-old">198,000円</span>
+                        </div>
+                        <div class="bundle-row bundle-row--new">
+                            <span class="bundle-label">モニター価格</span>
+                            <span class="bundle-new">58,000円</span>
+                        </div>
+                        <div class="bundle-note">※3ヶ月集中プラン（全6回）</div>
+                    </div>
 
-    <h4>◆プレミアムヘッドスパ（全6回）</h4>
-    <ul>
-      <li>・髪にとって1番の美容液は血液と言われています。</li>
-      <li>・強い髪を育てるためにまずは血行促進。</li>
-      <li>・育毛成分が浸透しやすい頭皮環境へ整備</li>
-      <li>・睡眠・自律神経・ストレス要因にもアプローチ</li>
-    </ul>
+                    <div class="pricing-detail-section">
+                        <h4>◆カウンセリング（毛髪診断士在籍サロン）</h4>
+                        <ul>
+                            <li>・頭皮状態・生活習慣・薄毛要因を専門スタッフが分析</li>
+                            <li>・現状に応じた改善戦略を個別に設計</li>
+                            <li>・自宅での実践ポイントまで明確化</li>
+                        </ul>
 
-    <h4>◆エクソソーム施術（全6回）</h4>
-    <ul>
-      <li>・細胞レベルで発毛サイクルを活性化する集中アプローチ</li>
-      <li>・初期段階から変化を追える個別カルテ管理</li>
-      <li>・回数ごとに進行度を最適化し、結果につなげる設計</li>
-    </ul>
+                        <h4>◆プレミアムヘッドスパ（全6回）</h4>
+                        <ul>
+                            <li>・髪にとって1番の美容液は血液と言われています。</li>
+                            <li>・強い髪を育てるためにまずは血行促進。</li>
+                            <li>・育毛成分が浸透しやすい頭皮環境へ整備</li>
+                            <li>・睡眠・自律神経・ストレス要因にもアプローチ</li>
+                        </ul>
 
-    <h4>◆ホームケア</h4>
-    <ul>
-      <li>・頭皮用美容液・シャンプーなどで日々のケアを最適化</li>
-      <li>・施術効果を持続</li>
-      <li>・定着させる補強ケア</li>
-    </ul>
+                        <h4>◆エクソソーム施術（全6回）</h4>
+                        <ul>
+                            <li>・細胞レベルで発毛サイクルを活性化する集中アプローチ</li>
+                            <li>・初期段階から変化を追える個別カルテ管理</li>
+                            <li>・回数ごとに進行度を最適化し、結果につなげる設計</li>
+                        </ul>
 
-    <h4>◆モニターお申し込みでホームケアプレゼント</h4>
-    <ul>
-      <li>・ホームケア内容：シャンプー方法/頭皮ケア/生活習慣の最適化</li>
-      <li>・専用LINEサポート：期間中の相談/経過フォロー</li>
-      <li>・カウンセリング：毛髪診断士在籍サロンが頭皮状態を丁寧に確認</li>
-      <li>・スカルプシャンプー1本プレゼント🎁</li>
-    </ul>
-  </div>
+                        <h4>◆ホームケア</h4>
+                        <ul>
+                            <li>・頭皮用美容液・シャンプーなどで日々のケアを最適化</li>
+                            <li>・施術効果を持続</li>
+                            <li>・定着させる補強ケア</li>
+                        </ul>
 
-  <a href="#contact" class="btn btn-primary" style="margin-top: 30px;">無料カウンセリング予約</a>
-  <p class="pricing-note">※モニタープランは写真撮影にご協力いただける方限定です（お顔は写りません）</p>
-</div>
+                        <h4>◆モニターお申し込みでホームケアプレゼント</h4>
+                        <ul>
+                            <li>・ホームケア内容：シャンプー方法/頭皮ケア/生活習慣の最適化</li>
+                            <li>・専用LINEサポート：期間中の相談/経過フォロー</li>
+                            <li>・カウンセリング：毛髪診断士在籍サロンが頭皮状態を丁寧に確認</li>
+                            <li>・スカルプシャンプー1本プレゼント🎁</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 30px;">無料カウンセリング予約</a>
+                    <p class="pricing-note">※モニタープランは写真撮影にご協力いただける方限定です（お顔は写りません）</p>
+                </div>
             </div>
         </div>
     </section>
@@ -2658,8 +2143,15 @@ iframe { display: block; }
                     <p class="access-station">JR関内駅 徒歩5分</p>
                 </div>
                 <div class="access-map">
-                  <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.2903229966805!2d139.6367123!3d35.4476063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185de553bc9ae1%3A0xe8d14f2dcfcfb872!2z5qiq5rWcL-mWouWGhSDjg4njg6njgqTjg5jjg4Pjg4njgrnjg5HlsILploDlupcg5aSp56m644Gu6aCY5Z-f!5e0!3m2!1sja!2sjp!4v1765985396433!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.2903229966805!2d139.6367123!3d35.4476063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185de553bc9ae1%3A0xe8d14f2dcfcfb872!2z5qiq5rWcL-mWouWGhSDjg4njg6njgqTjg5jjg4Pjg4njgrnjg5HlsILploDlupcg5aSp56m644Gu6aCY5Z-f!5e0!3m2!1sja!2sjp!4v1765985396433!5m2!1sja!2sjp"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -2670,21 +2162,21 @@ iframe { display: block; }
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-  <img class="footer-logo" src="./img/tenku-rogo-master.png" alt="天空の領域">
-  <p>横浜・関内の発毛促進サポート専門サロン</p>
-</div>
+                    <img class="footer-logo" src="./img/tenku-rogo-master.png" alt="天空の領域">
+                    <p>横浜・関内の発毛促進サポート専門サロン</p>
+                </div>
                 <div class="footer-info">
                     <p>〒231-0012 神奈川県横浜市中区相生町4丁目65 ポラリス 9階</p>
                     <p>営業時間: 11:00-22:00（不定休）</p>
                 </div>
             </div>
-           <div class="footer-payments">
-  <p class="footer-payments-title">お支払い方法</p>
-  <p class="payment-text">
-    Visa / Mastercard / JCB / American Express<br>
-    PayPay / 楽天ペイ / LINE Pay / au PAY
-  </p>
-</div>
+            <div class="footer-payments">
+                <p class="footer-payments-title">お支払い方法</p>
+                <p class="payment-text">
+                    Visa / Mastercard / JCB / American Express<br>
+                    PayPay / 楽天ペイ / LINE Pay / au PAY
+                </p>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 天空の領域 All Rights Reserved.</p>
                 <p class="footer-disclaimer">※本サービスは医療行為ではありません。効果には個人差があります。</p>
@@ -2698,134 +2190,134 @@ iframe { display: block; }
     </button>
 
     <script>
-// 天空の領域 LP - パターンC JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ページトップボタン
-    const pageTop = document.getElementById('page-top');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            pageTop.classList.add('visible');
-        } else {
-            pageTop.classList.remove('visible');
-        }
-    });
-    
-    pageTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // スムーズスクロール
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            if (href === '#') {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                return;
-            }
-            
-            const targetId = href.substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                e.preventDefault();
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // スクロールアニメーション
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    const animateElements = document.querySelectorAll('.feature-item, .pricing-card, .synergy-step, .testimonial-card, .before-after-card');
-    
-    animateElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(element);
-    });
-
-    // モバイルナビゲーション
-    const nav = document.querySelector('.nav');
-    const header = document.querySelector('.header');
-    
-    if (window.innerWidth <= 768) {
-        const menuButton = document.createElement('button');
-        menuButton.className = 'mobile-menu-button';
-        menuButton.innerHTML = '☰';
-        menuButton.style.cssText = `
-            display: block;
-            background: none;
-            border: none;
-            font-size: 28px;
-            color: var(--blue-primary);
-            cursor: pointer;
-            padding: 10px;
-        `;
+    // 天空の領域 LP - パターンC JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
         
-        header.querySelector('.header-content').insertBefore(menuButton, nav);
+        // ページトップボタン
+        const pageTop = document.getElementById('page-top');
         
-        nav.style.display = 'none';
-        nav.style.cssText += `
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        `;
-        
-        menuButton.addEventListener('click', function() {
-            if (nav.style.display === 'none' || nav.style.display === '') {
-                nav.style.display = 'flex';
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                pageTop.classList.add('visible');
             } else {
-                nav.style.display = 'none';
+                pageTop.classList.remove('visible');
             }
         });
-    }
-
-    // パフォーマンス最適化
-    if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-            img.loading = 'lazy';
+        
+        pageTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    }
 
-    console.log('天空の領域 LP - パターンC (水色×紺色) 読み込み完了');
-});
+        // スムーズスクロール
+        const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+        
+        smoothScrollLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#') {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    e.preventDefault();
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        const animateElements = document.querySelectorAll('.pricing-card, .synergy-step, .testimonial-card, .before-after-card');
+        
+        animateElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+
+        // モバイルナビゲーション
+        const nav = document.querySelector('.nav');
+        const header = document.querySelector('.header');
+        
+        if (window.innerWidth <= 768) {
+            const menuButton = document.createElement('button');
+            menuButton.className = 'mobile-menu-button';
+            menuButton.innerHTML = '☰';
+            menuButton.style.cssText = `
+                display: block;
+                background: none;
+                border: none;
+                font-size: 28px;
+                color: var(--blue-primary);
+                cursor: pointer;
+                padding: 10px;
+            `;
+            
+            header.querySelector('.header-content').insertBefore(menuButton, nav);
+            
+            nav.style.display = 'none';
+            nav.style.cssText += `
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            `;
+            
+            menuButton.addEventListener('click', function() {
+                if (nav.style.display === 'none' || nav.style.display === '') {
+                    nav.style.display = 'flex';
+                } else {
+                    nav.style.display = 'none';
+                }
+            });
+        }
+
+        // パフォーマンス最適化
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.loading = 'lazy';
+            });
+        }
+
+        console.log('天空の領域 LP - パターンC (水色×紺色) 読み込み完了');
+    });
     </script>
 </body>
 </html>
